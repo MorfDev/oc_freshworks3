@@ -116,6 +116,7 @@ class ControllerFreshworksInfo extends Controller
 			'group' => $customerGroup,
 			'reward' => $reward,
 			'country' => $country,
+			'created_at' => $customer_info['date_added'],
 			'total_sales' => $this->totalSales,
 			'address_list' => $addressList,
 		];
