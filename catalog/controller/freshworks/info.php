@@ -109,14 +109,14 @@ class ControllerFreshworksInfo extends Controller
 		} catch (\Exception $e) {
 			$country = '';
 		}
-
+		$createdAt = new \DateTime($customer_info['date_added']);
 		return [
 			'name' => $customer_info['firstname'] . ' ' . $customer_info['lastname'],
 			'email' => $customer_info['email'],
 			'group' => $customerGroup,
 			'reward' => $reward,
 			'country' => $country,
-			'created_at' => $customer_info['date_added'],
+			'created_at' => $createdAt->format('Y-m-d'),
 			'total_sales' => $this->totalSales,
 			'address_list' => $addressList,
 		];
